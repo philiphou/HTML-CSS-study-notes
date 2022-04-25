@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box1 {
+            width: 200px;
+            height: 200px;
+            background-color: #bfa;
+        }
+        /* 为了解决margin 传递（重叠）问题，也就是让.box2的margin-top 不传递给.box1，只让.box2 在父元素内有margin-top */
+        /* 可以给 .box1 加 border-top ， 也可以给.box1 加入伪元素::before，原理相同，都是让.box1和.box2 的margin-top 分开识别 */
+        /* .box1::before {
+            content: '';
+            display: table;
+            /* display: 设置成table 属性，这样.box2就不会溢出到.box1下面了。 */
+        /* } */
+        
+        .box2 {
+            width: 100px;
+            height: 100px;
+            background-color: brown;
+            margin-top: 100px;
+        }
+        /* 我们可以指定一个类.clearfix,然后将其设置前后伪元素实现解决问题：高度塌陷 和 外边距重叠 */
+        
+        .clearfix::before,
+        .clearfix::after {
+            content: '';
+            display: table;
+            /* display:table 既可以解决高度塌陷，也可以解决外边距重叠问题 */
+            clear: both;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box1 clearfix">
+        <div class="box2"></div>
+    </div>
+</body>
+
+</html>

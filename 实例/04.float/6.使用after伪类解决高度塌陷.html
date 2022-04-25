@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box1 {
+            border: 10px red solid;
+        }
+        
+        .box1::after {
+            content: '';
+            /* 将:after 伪元素转化成成block 块元素 ，因为默认:after是行内元素；*/
+            display: block;
+            clear: both;
+            /* 原理上跟添加.box3是一个道理，只是这次是用CSS添加了伪元素，并将其转换成块元素，然后用clearboth 去除浮动元素的影响； */
+        }
+        
+        .box2 {
+            width: 100px;
+            height: 100px;
+            background-color: #baf;
+            float: left;
+        }
+        /* .box3 {
+            height: 50px;
+            background-color: grey;
+            clear: both;
+            /* 其实是box3把box1撑起来了，因为box3 clear 了左右的浮动元素对其位置的影响，所以box3 就会在box2下面，而且必须在box1里面，所以box1自动增高； */
+        /* } */
+        /* 上述行为其实是用结构去修改样式，把.box3里面内容去掉，只留clear:both 这样就能样式上解决了高度塌陷问题，我们可以根据此原理，在CSS中去实现这个功能 */
+        /* 我们给.box:after 添加一个内容，这样就 */
+    </style>
+</head>
+
+<body>
+    <div class="box1">
+        <div class="box2"></div>
+        <div class="box3"></div>
+    </div>
+</body>
+
+</html>
