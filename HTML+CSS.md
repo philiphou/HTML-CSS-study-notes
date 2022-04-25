@@ -698,6 +698,32 @@
             -- 在content 中设置字体的编码
             -- 设置字体的样式： font-family: "Font Awesome 5 Brands" 或者 "Font Awesome 5 Free"; 
             --  也可以在标签中通过实体方式添加： <span class = "fas">&#xf0f3;</span> 实体格式： &#x图标编码；
+            -- iconfont 阿里的图标字体库；确认版权问题；
+        --  行高： Line Height
+            -- 行高是指文字占有的实际高度，可以通过line height 设置行高
+            --  行高可以指定大小， 单位可以是px 或者 em; 如果是整数，表示行高是字体的倍数，默认是1.33
+            -- 字体框：  我们设置font-size 实际上就是设置字体框的高度；
+            -- 通常情况下，我们可以将单行文字的 line-height 行高设置的和 div 高度一样，这样文字就会垂直居中； 默认情况下，文字在行高的中间展开；
+            -- 行高也可以用来设置多行文字的行间距； 如果行高 line-height 是 100px, 字体的 font-size 是50px; 那么字体上下各有25px 距离； 如果是多行，行间距就是2*25=50px;
+        -- 字体的简写属性：
+                 -- font-weight: 值有 normal, bold, 100-900; font-style: 值有 normal, italic 正常的 和 斜体；
+                 --  font 类似于border ; font 可以设置字体的多个属性： font: normal/italic normal/bold  50px/2  'Times New Roman', serif; 整体格式：
+                     font: style weight 字体大小/行高 字体族；（行高可以省略不写)
+        -- 文本的水平和垂直对齐：
+            - text-align: 是指文本的水平对齐，如果写left 就是左侧对齐；right 就是右对齐； center 是居中对齐； justify 是两端都对齐；
+            - vertical-align: 设置元素纵向对齐： 值可以是：  baseline: 基线对齐； （默认值就是基线对齐）； top: 顶部对齐； bottom: 底部对齐； middle: 居中对齐（基线高度加上X的一高度）； 也可以直接指定值：例如 -10px;
+        -- 其他的文本样式
+            - text-decoration: 文本修饰： 可选值： none; underline; line-through; overline; 上划线，下划线，穿透线；
+            - white-space: 可选值： normal(默认)；nowrap 不换行； pre 保留空白；
+            .box2{
+                width:200px;
+                white-space: nowrap;
+                overflow:hidden;
+                text-overflow: ellipsis; // 省略号
+            }
+
+
+                
     
 
 
