@@ -721,7 +721,22 @@
                 overflow:hidden;
                 text-overflow: ellipsis; // 省略号
             }
-
+    - 背景相关知识： 
+        -- background-color:设置背景颜色； background-image: 设置背景图片；url(路径)
+        -- 可以同时设置背景图片和背景颜色，这样背景颜色会变成背景图片的背景色；
+        -- 如果背景图片小于元素大小，背景图片会自动在元素中重复平铺；
+        --  如果背景图片大于元素，将会有一部分背景无法完全显示；
+        -- 如果一样大，就会正常显示；
+        -- background-repeat: 设置背景的重复方式；可选值： 默认 repeat; 图片会沿着x,y 两个方向平铺； repeat-x(y) 只沿着x(y) 方向重复; no-repeat: 背景图片不会重复；
+        --  background-position: 设置背景图片的位置： 通过 top right bottom left 和 center  来设置背景图片的位置；九宫格位置；
+        -- 使用方位词时候，必须指定两个值，不然第二个默认为center; 例如 top-left
+        -- 也可以通过偏移量指定背景图片的位置： 水平方向和垂直方向偏移量； background-position: 10px 10px; 表示水平垂直各偏移10px;
+        -- background-clip: 默认值是 boder-box: 背景也会出现在边框的下面； padding-box： 背景不会出现在边框区域，值出现在内容区和外边距； content-box： 背景只会出现在内容区；
+        -- baackground-origin: 指的是背景图片的偏移量计算的原点； 默认值是；padding-box， 从内边距处开始计算；content-box： 背景图片的偏移量从内容区处开始计算； border-box： 背景图片的偏移量原点从边框处开始计算；
+        -- background-size: 背景图片的尺寸：第一个值表示宽度，第二个值表示高度；如果只写第一个值，第二个写auto 或者不写，则默认高度等比例缩放；第一个值宽度如果设置成 100% 则表示背景图片和元素宽度一致，背景图片的高度根据宽度等比例缩放；可选值还有： cover; 图片比例不变，将元素覆盖；contain: 图片比例不变，将图片在元素中完整显示；
+        -- background-attachment: 可以设置背景元素是否跟随元素移动； 默认值是 scroll： 背景图片会跟随元素移动； fixed: 背景图片会固定在页面中，不随元素移动；
+        -- backgournd: 是关于背景相关的简写属性： backgournd: #bfa url('././') center/cover(content/contain) no-repeat; 没有顺序要求,除了位置后面写size； 
+    - 
 
                 
     
