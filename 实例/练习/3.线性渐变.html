@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box1 {
+            width: 200px;
+            height: 200px;
+            /* 实现线性渐变效果，红色在开头，黄色在结尾 中间是过渡区； */
+            background-image: linear-gradient(red, yellow);
+            /* 如果想从左向右变，则可以加一个 to right, */
+            background-image: linear-gradient(to right, red, yellow, blue, green);
+            /* 设置重复渐变色 */
+            background-image: repeating-linear-gradient(red, yellow 50px);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box1">
+
+    </div>
+</body>
+
+</html>

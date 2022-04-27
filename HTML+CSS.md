@@ -744,9 +744,28 @@
             - 根据测量结果，创建一个元素div
             - 将雪碧图设置为元素的背景图片
             - 设置图片偏移量，以显示正确图片 : background-position: 0,0;
+            - 雪碧图特点就是可以一次性将多个图片加载进页面，降低请求的次数，加快访问速度，提升用户体验；
 
-        * 线性渐变：
-            - 
+        * 渐变：
+            - 通过渐变可以设置一些复杂的背景颜色，可以实现从一个颜色向其他颜色过度的效果；
+            - 渐变是图片，需要通过background-image来设置
+            - background-image: 可选值： linear-gradient() 线性渐变；颜色沿着一条直线发生变化：线性渐变的开头，可以指定变化方向(deg)： background-image:linear-gradient(0deg,red,yellow)
+            - 渐变方向取值： to left; to right; to bottom; to top; deg(表示度数); turn(表示圈)；
+            - 渐变可以同时指定多个颜色，默认情况是平均分配；
+            - 也可以手动指定范围： linear-gradient(red 50px, yellow) 红色开始渐变位置是50px;
+            - 重复渐变： repeating-linear-gradient()
+            - 放射性渐变： 
+                --     <style>
+                        .box1 {
+                            width: 300px;
+                            height: 300px;
+                            border-radius: 50%;
+                            background-image: radial-gradient(red 50px, yellow);
+                        }
+                    </style>
+                -- 默认情况下，径向渐变的形状是根据元素的形状确定的，正方形对应圆形， 长方形对应椭圆形，也可以手动指定径向渐变的范围；也可以重复指定渐变；
+
+
 
                 
     
