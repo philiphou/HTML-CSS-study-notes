@@ -764,9 +764,188 @@
                         }
                     </style>
                 -- 默认情况下，径向渐变的形状是根据元素的形状确定的，正方形对应圆形， 长方形对应椭圆形，也可以手动指定径向渐变的范围；也可以重复指定渐变；
+    - 表格 table: 
+        - 例子： 
+         <!-- 在 现实生活中，我们经常需要使用表格来表示一些格式化的数据，比如课程表，人名单，成绩单-，同样在网页中我们也需要表格 -->
+                    <table border="1" width="50%" align="center">
+                        <!-- 在table中，使用tr表示表格中的一行，有几个tr就有几行 -->
+                        <tr>
+                            <!-- 在tr中使用td 表示一个单元格，有几个td就有几个单元格 -->
+                            <td>A1</td>
+                            <td>B1</td>
+                            <td>C1</td>
+                            <td>D1</td>
+                        </tr>
+                        <tr>
+                            <!-- 在tr中使用td 表示一个单元格，有几个td就有几个单元格 -->
+                            <!-- 此处纵向合并单元格A2和B2 -->
+                            <td rowspan="2">A2</td>
+                            <td>B2</td>
 
+                            <td>C2</td>
+                            <td>D2</td>
+                        </tr>
+                        <tr>
+                            <!-- 在tr中使用td 表示一个单元格，有几个td就有几个单元格 -->
 
+                            <td>B3</td>
+                            <td>C3</td>
+                            <td>D3</td>
+                        </tr>
+                        <tr>
+                            <!-- 在tr中使用td 表示一个单元格，有几个td就有几个单元格 -->
+                            <td>A4</td>
+                            <td>B4</td>
+                            <!-- 此处C4横向占两个单元格； -->
+                            <td colspan="2">C4</td>
+                        </tr>
+                    </table>
+        - 长表格：
+                            - <body>
+                    <table border="1" width="50%" align="center">
+                        <!-- 可以将一个表格分成三个部分，thead,tbody,tfoot : 头部，主体，底部-->
+                        <thead>
+                            <tr>
+                                <!-- th 表示头部单元格； -->
+                                <th>日期</th>
+                                <th>收入</th>
+                                <th>支出</th>
+                                <th>余额</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>040122</td>
+                                <td>5000</td>
+                                <td>2000</td>
+                                <td>3000</td>
+                            </tr>
+                            <tr>
+                                <td>040122</td>
+                                <td>5000</td>
+                                <td>2000</td>
+                                <td>3000</td>
+                            </tr>
+                            <tr>
+                                <td>040122</td>
+                                <td>5000</td>
+                                <td>2000</td>
+                                <td>3000</td>
+                            </tr>
+                            <tr>
+                                <td>040122</td>
+                                <td>5000</td>
+                                <td>2000</td>
+                                <td>3000</td>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td>
+                                </td>
+                                <td>
+                                </td>
+                                <td>合计</td>
+                                </td>
+                                <td>12000</td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </body>
+                </html>
+        - 表格的样式： 
+            -  
+            <html>
+                    <style>
+                        table {
+                            width: 50%;
+                            border: 1px solid black;
+                            /* 指定边框之间的距离：border-spacing: */
+                            border-spacing: 0;
+                            /* border-collapse: 属性用来设置 边框的合并，让多重边框合并为一个；这样再设置border-spacing 就不管用了*/
+                            border-collapse: collapse;
+                            margin-bottom: 100px;
+                        }
+                        /*  如果 表格中没有使用tbody,而是直接使用tr，那么浏览器会自动创建一个 tbody 然后将tr 全部放到tbody中，tr 不是table 的子元素，而是tbody的子元素，所以 table>tr 是不对的引用；*/
+                                        tr:nth-child(odd) {
+                            /* 设置隔行变色 */
+                            background-color: #bfa;
+                        }
+                                        td {
+                            border: 1px solid black;
+                            height: 50px;
+                            /* 默认情况下，td中的元素是垂直居中的；可以通过 vertical-align 来设置(top,bottom,middle) */
+                            vertical-align: middle;
+                            /* table 中的 tr 的 td 中 vertical-align 可以将任何元素垂直居中，所以利用此特征，我们一般可以把一个 div 中的子元素垂直居中，只要把这个div 设置成： display:table-cell; */
+                            text-align: center;
+                        }
+                        
+                        .box1 {
+                            width: 400px;
+                            height: 400px;
+                            background-color: #bfa;
+                            /* 将元素设置为单元格；td 是一个行内元素；但一般只是自己一行，或者和其他的div 变成td 的在一行； */
+                            display: table-cell;
+                            vertical-align: middle;
+                        }
+                        
+                        .box2 {
+                            width: 100px;
+                            height: 100px;
+                            background-color: red;
+                            margin: 0 auto;
+                        }
+                                    </style>
+                        </head>
+                            
+                        <body>
+                            <table>
+                                <tr>
+                                    <td>学号</td>
+                                    <td>姓名</td>
+                                    <td>性别</td>
+                                    <td>年龄</td>
+                                    <td>住址</td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>孙悟空</td>
+                                    <td>男</td>
+                                    <td>500</td>
+                                    <td>花果山</td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>猪八戒</td>
+                                    <td>男</td>
+                                    <td>35</td>
+                                    <td>高老庄</td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>沙和尚</td>
+                                    <td>男</td>
+                                    <td>100</td>
+                                    <td>流沙河</td>
+                                </tr>
+                                <tr>
+                                    <td>4</td>
+                                    <td>唐僧</td>
+                                    <td>男</td>
+                                    <td>999</td>
+                                    <td>女儿国</td>
+                                </tr>
+                            </table>
+                            <div class="box1">
+                                <div class="box2"></div>
+                            </div>
+                        </body>
 
+                        </html>
+- 表单简介：
+    -- 在现实生活中用于提交数据；
+    -- 在网页中也可以使用表单，用于将本地的数据提交给远程的服务器；
+    -- 使用 form  创建表单；
                 
     
 
