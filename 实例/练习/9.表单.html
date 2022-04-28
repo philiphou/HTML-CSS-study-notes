@@ -12,11 +12,30 @@
     <!-- form 中必须要有的一个属性： action=''; -->
 
     <!-- action 值就是表单要提交的服务器地址；-->
+
     <form action="9.1target.html">
         <!-- 表单项: 文本框 input-->
-        <input type="text">
-        <!-- 提交按钮 -->
-        <input type="submit" value="哈哈注册">
+        <!-- 数据要提交到服务器中，必须要给元素指定一个name 属性值； -->
+        用户名<input type="text" name='username'><br> 密码框 <input type="password" name="password"><br>
+        <!-- 单选按钮 ,也是input  type 是 radio; -->
+        <!-- 单选框必须保证name 属性只有一个名，这样一个name属性才对应一个选中的值 -->
+        <!-- 选择框必须指定value属性，value 属性值最终作为用户填写的值传递给服务器； -->
+        运动爱好单选框:<br> 游泳
+        <!-- 可以将单选按钮散步设置为默认选中 -->
+        <input type="radio" name='hobby' value='swim'> 散步<input type="radio" name="hobby" value="walk" checked><br>
+        <!-- 多选按钮 -->
+        去过的城市多选框: 北京 <input type="checkbox" name="city" value="beijing">青岛 <input type="checkbox" name="city" value="qingdao">南京 <input type="checkbox" name="city" value="nanjing"><br/>
+        <!-- 提交按钮 也是 input， type 是 checkbox-->
+        <!-- 下拉列表 ： 标签是 select,也需要有name 属性，下拉选项直接写在select 子元素的 option里-->
+
+        <select name="travalmethod" id="">
+        <option value="Bus">Bus</option>
+        <!-- 给某一个option 比如 Gotrain 添加属性selected,表示默认选中 -->
+        <option value="Gotrain" selected>GoTrain</option>
+        <option value="Drive">Drive</option>
+        <option value="Bike">Bike</option>
+    </select><br>
+        <input type="submit" value="哈哈注册"></form><br/>
     </form>
 </body>
 

@@ -946,7 +946,58 @@
     -- 在现实生活中用于提交数据；
     -- 在网页中也可以使用表单，用于将本地的数据提交给远程的服务器；
     -- 使用 form  创建表单；
-                
+            <body>
+            <!-- form 中必须要有的一个属性： action=''; -->
+            <!-- action 值就是表单要提交的服务器地址；-->
+            <form action="9.1target.html">
+                <!-- 表单项: 文本框 input-->
+                <!-- 数据要提交到服务器中，必须要给元素指定一个name 属性值； -->
+                用户名<input type="text" name='username'><br> 密码框 <input type="password" name="password"><br>
+                <!-- 单选按钮 ,也是input  type 是 radio; -->
+                <!-- 单选框必须保证name 属性只有一个名，这样一个name属性才对应一个选中的值 -->
+                <!-- 选择框必须指定value属性，value 属性值最终作为用户填写的值传递给服务器； -->
+                运动爱好单选框:<br> 游泳
+                <!-- 可以将单选按钮散步设置为默认选中 -->
+                <input type="radio" name='hobby' value='swim'> 散步<input type="radio" name="hobby" value="walk" checked><br>
+                <!-- 多选按钮 -->
+                去过的城市多选框: 北京 <input type="checkbox" name="city" value="beijing">青岛 <input type="checkbox" name="city" value="qingdao">南京 <input type="checkbox" name="city" value="nanjing"><br/>
+                <!-- 提交按钮 也是 input， type 是 checkbox-->
+                <!-- 下拉列表 ： 标签是 select,也需要有name 属性，下拉选项直接写在select 子元素的 option里-->
+                <select name="travalmethod" id="">
+                <option value="Bus">Bus</option>
+                <!-- 给某一个option 比如 Gotrain 添加属性selected,表示默认选中 -->
+                <option value="Gotrain" selected>GoTrain</option>
+                <option value="Drive">Drive</option>
+                <option value="Bike">Bike</option>
+            </select><br>
+                <input type="submit" value="哈哈注册"></form><br/>
+            </form>
+        </body>
+    -- 表单补充：
+                <body>
+            <form action="9.1target.html">\
+                <!-- 默认username 设置是 admin01 -->
+                <!-- readyonly 属性是将表单项设置为只读；disabled 属性是设置为禁用，不能选中 -->
+                <!-- autofocus 是设置表单项自动获取焦点； -->
+                UserName: <input type="text" name="username" value="admin01"><br>
+                <!-- 可以开启自动补全功能 ，也可以关闭 off-->
+                UserName: <input type="text" name="username" autocomplete="on"><br>
+                <!-- 提交按钮 -->
+                提交 <input type="submit"> <br> 普通按钮： <input type="button" value="普通按钮"><br>
+                <!-- 重置按钮 : type 是 reset, 作用是将表单里的输入内容重置为默认值-->
+                重置： <input type="reset"><br>
+                <!-- 和上面三种input 按钮对应的是button 按钮 ：-->
+                <!-- 下面的三个 Button 作用和上面input 三个是一样的，区别是button不是自结束标签，里面可以加各种东西-->
+                <button type="submit">提交</button>
+                <button type="reset">重置</button>
+                <button type="button">单纯按钮</button><br>
+                <!-- 还有color 按钮  用来提交颜色-->
+                <input type="color">
+                <!-- 还有email输入框 -->
+                Email: <input type="email" name="Email">
+            </form>
+        </body>
+                                
     
 
 

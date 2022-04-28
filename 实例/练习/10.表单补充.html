@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="9.1target.html">\
+        <!-- 默认username 设置是 admin01 -->
+        <!-- readyonly 属性是将表单项设置为只读；disabled 属性是设置为禁用，不能选中 -->
+        <!-- autofocus 是设置表单项自动获取焦点； -->
+        UserName: <input type="text" name="username" value="admin01"><br>
+        <!-- 可以开启自动补全功能 ，也可以关闭 off-->
+        UserName: <input type="text" name="username" autocomplete="on"><br>
+        <!-- 提交按钮 -->
+        提交 <input type="submit"> <br> 普通按钮： <input type="button" value="普通按钮"><br>
+        <!-- 重置按钮 : type 是 reset, 作用是将表单里的输入内容重置为默认值-->
+        重置： <input type="reset"><br>
+        <!-- 和上面三种input 按钮对应的是button 按钮 ：-->
+        <!-- 下面的三个 Button 作用和上面input 三个是一样的，区别是button不是自结束标签，里面可以加各种东西-->
+        <button type="submit">提交</button>
+        <button type="reset">重置</button>
+        <button type="button">单纯按钮</button><br>
+        <!-- 还有color 按钮  用来提交颜色-->
+        <input type="color">
+        <!-- 还有email输入框 -->
+        Email: <input type="email" name="Email">
+    </form>
+</body>
+
+</html>
