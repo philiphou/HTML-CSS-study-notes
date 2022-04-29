@@ -1,0 +1,90 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+
+/* 顶部导航条的大容器 */
+
+.top-bar-wrapper {
+    /* 设置顶部导航条全屏宽度 */
+    width: 100%;
+    /* 设置导航条高度和行高 */
+    height: 40px;
+    /* 为了使文字垂直居中，同时设置导航条高度： 40px; */
+    line-height: 40px;
+    /* 设置背景颜色 */
+    background-color: #333;
+}
+
+
+/* 在 内部容器 .topbar 处添加一个类 .w， 设置宽度并水平居中； */
+
+
+/* 设置左侧导航栏：.service */
+
+.service {
+    float: left;
+}
+
+
+/* 设置右侧导航栏向右浮动： */
+
+.shop-cart,
+.userinfo {
+    float: right;
+}
+
+
+/* 设置所有的 li 向左浮动； */
+
+.topbar li {
+    float: left;
+}
+
+
+/* 设置超链接样式 */
+
+.topbar a {
+    font-size: 12px;
+    color: #b0b0b0;
+    /* 让 a 变成块元素，这样高度就会最大40px,这样就可以全部高度区域可以选中a */
+    display: block;
+}
+
+
+/* 设置鼠标hover 效果 */
+
+.topbar a:hover {
+    color: white;
+}
+
+
+/* 设置中间分割线样式 */
+
+.topbar .line {
+    color: #424242;
+    font-size: 12px;
+    margin: 0 8px;
+}
+
+
+/* 设置购物车的样式 */
+
+.shop-cart {
+    margin-left: 26px;
+}
+
+.shop-cart a {
+    width: 120px;
+    background-color: #424242;
+    text-align: center;
+}
+
+
+/* 给 shop-cart ul 绑定 hover， 绑定后设置a 的背景颜色: */
+
+.shop-cart:hover a {
+    background-color: white;
+    color: #FF6700;
+}
