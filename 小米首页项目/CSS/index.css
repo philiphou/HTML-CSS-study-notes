@@ -36,6 +36,68 @@
 }
 
 
+/* 设置下载app下拉二维码样式 */
+
+.app .qrcode {
+    width: 124px;
+    height: 148px;
+    background-color: #fff;
+    /* 因为 span 小米商城app 继承了祖先元素的lineheight 行高 40px, 所以临时离二维码考下很远，解决这个问题需要重新设置行高： */
+    line-height: 1;
+    /* 设置文字居中 */
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .3);
+    /* display: none; */
+    /* 设置过度效果，将高度设置为0，隐藏overrflow */
+    height: 0;
+    overflow: hidden;
+    /* 利用 transition 属性设置过度效果,就是高度发生变化时候，用1.5s 时间来变化 */
+    transition: height 0.5s;
+}
+
+
+/* 设置二维码图片 */
+
+.app .qrcode img {
+    width: 90px;
+    margin: 17px;
+    margin-bottom: 10px;
+}
+
+
+/* 设置二维码下面的文字 */
+
+.app .qrcode span {
+    color: black;
+    font-size: 16px;
+}
+
+.app:hover .qrcode {
+    height: 148px;
+}
+
+
+/* 给.app 设置伪元素，添加二维码图片框上的小三角 */
+
+.app::after {
+    border: 5px solid transparent;
+    content: '';
+    width: 0;
+    height: 0;
+    display: block;
+    border-top: none;
+    border-bottom-color: black;
+    /* 设置小三角的绝对定位 */
+    position: absolute;
+    bottom: 0;
+    display: none;
+}
+
+.app:hover:after {
+    display: block;
+}
+
+
 /* 设置所有的 li 向左浮动； */
 
 .topbar li {
@@ -87,4 +149,24 @@
 .shop-cart:hover a {
     background-color: white;
     color: #FF6700;
+}
+
+
+/* 设置主页上部中间的 header */
+
+.header {
+    height: 100px;
+}
+
+.logo {
+    float: left;
+}
+
+.header .logo a {
+    width: 55px;
+    height: 55px;
+    display: block;
+    margin-top: 22px;
+    background-image: url('https://s02.mifile.cn/assets/static/image/logo-mi2.png');
+    background-size: cover;
 }
