@@ -41,7 +41,6 @@
 .app .qrcode {
     width: 124px;
     height: 148px;
-    background-color: #fff;
     /* 因为 span 小米商城app 继承了祖先元素的lineheight 行高 40px, 所以临时离二维码考下很远，解决这个问题需要重新设置行高： */
     line-height: 1;
     /* 设置文字居中 */
@@ -53,6 +52,9 @@
     overflow: hidden;
     /* 利用 transition 属性设置过度效果,就是高度发生变化时候，用1.5s 时间来变化 */
     transition: height 0.5s;
+    position: absolute;
+    z-index: 999;
+    background-color: white;
 }
 
 
@@ -154,6 +156,10 @@
 
 /* 设置主页上部中间的 header */
 
+.header-wrapper {
+    position: relative;
+}
+
 .header {
     height: 100px;
 }
@@ -200,4 +206,33 @@
     margin-right: 20px;
     display: block;
     height: 100%;
+}
+
+
+/* 创建中部导航条下拉框 */
+
+.nav .items {
+    width: 100%;
+    /*相对于header-wrapper 开启了定位的祖先元素（包含块）  */
+    position: absolute;
+    top: 100px;
+    left: 0;
+    height: 0;
+    overflow: hidden;
+    transition: height 0.3s;
+}
+
+
+/* 为导航条li 绑定 hover 属性，开启下拉框 */
+
+.nav li:not(:first-of-type):not(:last-of-type):not(:nth-child(9)):hover~.items,
+.items:hover {
+    border-top: 1px grey solid;
+    height: 228px;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, .3);
+    z-index: 999;
+}
+
+.nav li:hover a {
+    color: #FF6700;
 }

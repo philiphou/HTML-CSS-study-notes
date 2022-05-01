@@ -997,6 +997,8 @@
                 Email: <input type="email" name="Email">
             </form>
         </body>
+    -- 小米商城首页项目： 
+        - transition 属性可以用于为样式设置过度效果； transition: height 0.3s;
                                 
     
 
