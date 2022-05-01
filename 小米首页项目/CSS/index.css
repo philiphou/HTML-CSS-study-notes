@@ -264,6 +264,7 @@ ul .left-menu li a:hover {
     height: 228px;
     box-shadow: 0 5px 5px rgba(0, 0, 0, .3);
     z-index: 999;
+    background-color: white;
 }
 
 .nav li:hover>a {
@@ -387,4 +388,22 @@ ul .left-menu li a:hover {
 
 .pre-next .next {
     float: right;
+}
+
+
+/* 设置回到顶部的右侧小框 */
+
+.back-top {
+    width: 26px;
+    height: 206px;
+    background-color: orange;
+    /* 开启固定定位 */
+    position: fixed;
+    bottom: 60px;
+    /* 固定定位的水平位置要注意，外围是整个浏览器视口，两边空白区域大小不一定，所以设置水平位置时候要参考 */
+    /* left+margin-left+width+margin-right+right=视口宽度 */
+    /* auto+0+26+0+50%=视口宽度 */
+    right: 50%;
+    /* 设置完right 50% 后，元素位置居中，我们要让其left值继续增加半个 header-nav 的宽度，也就是613px, 可以： */
+    margin-right: -639px;
 }
