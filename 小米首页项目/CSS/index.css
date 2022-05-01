@@ -162,6 +162,7 @@
 
 .header {
     height: 100px;
+    position: relative;
 }
 
 .logo {
@@ -197,15 +198,47 @@
 
 /* 里面的li  */
 
-.nav-wrapper li {
+.nav>li {
     float: left;
 }
 
-.nav-wrapper li a {
+.nav-wrapper li>a {
     font-size: 16px;
     margin-right: 20px;
     display: block;
     height: 100%;
+}
+
+
+/* 设置左侧导航栏样式 */
+
+.left-menu {
+    height: 460px;
+    width: 200px;
+    background-color: rgba(0, 0, 0, .6);
+    position: absolute;
+    left: 0;
+    z-index: 888;
+    padding: 25px 0;
+}
+
+ul .left-menu li a {
+    display: block;
+    color: white;
+    height: 42px;
+    line-height: 42px;
+    margin-right: 0;
+    padding: 0 20px;
+}
+
+ul .left-menu li a:hover {
+    background-color: #ff9700;
+    color: white;
+}
+
+.left-menu a i {
+    float: right;
+    line-height: 42px;
 }
 
 
@@ -233,6 +266,53 @@
     z-index: 999;
 }
 
-.nav li:hover a {
+.nav li:hover>a {
     color: #FF6700;
+}
+
+
+/* 设置右部搜索框样式 */
+
+.search-wrapper {
+    width: 296px;
+    height: 52px;
+    /* position: absolute; */
+    float: right;
+    margin-top: 25px;
+}
+
+.search-wrapper .search-inp {
+    padding: 0;
+    height: 50px;
+    width: 220px;
+    border: none;
+    padding: 0 10px;
+    font-size: 16px;
+    border: 1px solid rgb(224, 224, 224);
+    outline: none;
+}
+
+.search-wrapper .search-btn {
+    height: 51px;
+    width: 54px;
+    padding: 0;
+    background-color: white;
+    font-size: 15px;
+    color: #616161;
+    border: 1px solid rgb(224, 224, 224);
+    border-left: none;
+}
+
+
+/* 设置Input 获取焦点以后的样式 */
+
+.search-wrapper .search-inp:focus,
+.search-wrapper .search-inp:focus+button {
+    border: 1px solid #ff6700;
+}
+
+.search-wrapper .search-btn:hover {
+    background-color: #ff6700;
+    color: white;
+    border: none;
 }
