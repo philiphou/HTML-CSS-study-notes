@@ -213,7 +213,7 @@
 /* 设置左侧导航栏样式 */
 
 .left-menu {
-    height: 460px;
+    height: 410px;
     width: 200px;
     background-color: rgba(0, 0, 0, .6);
     position: absolute;
@@ -315,4 +315,76 @@ ul .left-menu li a:hover {
     background-color: #ff6700;
     color: white;
     border: none;
+}
+
+
+/* 设置banner 样式 */
+
+.banner {
+    position: relative;
+    height: 460px;
+}
+
+.banner .list li {
+    position: absolute;
+}
+
+.banner img {
+    width: 100%;
+    vertical-align: top;
+}
+
+
+/* 设置5个轮播图导航小点 */
+
+.pointer {
+    position: absolute;
+    bottom: 22px;
+    right: 35px;
+}
+
+.pointer a {
+    float: left;
+    width: 6px;
+    height: 6px;
+    background-color: rgba(0, 0, 0, .4);
+    border-radius: 50%;
+    border: 2px solid rgba(255, 255, 255, .4);
+    margin-left: 6px;
+}
+
+.pointer a:hover,
+.pointer .active {
+    border-color: rgba(0, 0, 0, .4);
+    background-color: rgba(255, 255, 255, .4);
+}
+
+.pre-next {
+    position: absolute;
+    width: 83%;
+    height: 50px;
+    top: 40%;
+    left: 16.5%;
+}
+
+.pre-next a {
+    height: 100%;
+    width: 35px;
+    line-height: 50px;
+    font-size: 35px;
+    color: rgba(0, 0, 0, .3);
+    text-align: center;
+}
+
+.pre-next a:hover {
+    color: white;
+    background-color: rgba(0, 0, 0, .6);
+}
+
+.pre-next .pre {
+    float: left
+}
+
+.pre-next .next {
+    float: right;
 }
