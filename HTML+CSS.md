@@ -999,7 +999,95 @@
         </body>
     -- 小米商城首页项目： 
         - transition 属性可以用于为样式设置过度效果； transition: height 0.3s;
-                                
+        - 安装VS 插件： css minify
+        - 项目做完后，在css 文件下，点击用 f1 输入 Minify:document; 就会生成压缩版css 文件
+        - 
+
+- CSS 后期阶段：
+    - 动画：
+        * 过渡
+            -- 过渡 transition: 通过过渡可以指定当一个属性发生变化时的切换方式； transition: height 0.5s; 高度变化时候用0.5s 时间
+            -- 通过过渡效果可以提升用户体验；
+            -- 过渡属性： 
+                1. transition-prperty: 指定要执行过渡的属性： transition-property: width; 多个属性之间使用逗号隔开，如果选中所有属性，则用all;
+                   - 大部分属性都可以支持过渡效果，只要是值可以计算的； 像素，角度，颜色等。注意：过渡时候，必须是从一个有效数值向另外一个有效数值过渡；
+                2. transition-duration: 指定执行过渡效果所需时间： transition-duration: 2s; 事件单位可以是 s 和 ms; 1s = 1000 ms; 可以分别指定时间： 
+                3. transition-timing-function: 过得的时序函数；指定动画过渡执行的方式： 
+                    --默认值是 ease; 慢速开始，先加速 ，然后再减速；
+                    --linear: 线性匀速运动；
+                    -- ease-in: 慢速开始，然后加速；
+                    -- ease-out: 减速运动；
+                    -- ease-in-out: 开始和结束都慢， 中间快；属于先加速后减速；淡入淡出；
+                    -- cubic-bezier()参考贝塞尔曲线 网站: https://cubic-bezier.com
+                    -- steps() 分步执行效果；表示可以分成多少部执行： steps(1000) 表示分1000步执行；如果是再加入 start/end 参数，表示时间间隔一开始还是结束执行： 
+                      steps(3,start) 表示每一次时间间隔的一开始就执行，一共执行3步完成
+                4. transition-delay: 表示过渡效果的延迟；transition-delay: 2s； 表示延迟2s执行过渡效果；
+                5. 以上属性可以统一到 transition: 属性，可以同时指定与过渡相关的属性，并且没有严格顺序要求，只有一个次序要求：如果要写延迟，两个时间中，第一个是过渡持续时间，第二个是延时时间 ；
+        * 动画：
+            -- 动画跟过渡类似， 都是可以实现动态效果， 不同的是过渡需要在某个属性发生变化时候才会触发，动画可以自动触发动态效果；
+            -- 设置动画效果必须先要设置一个关键帧；关键帧设置了动画执行的每一个步骤； 语法： 
+                                @keyframes test{
+                                    from {
+                                        margin-left:0;
+                                    } // 表示动画的开始位置
+                                    to{
+                                        margin-left:700px;
+                                    } // 表示动画的结束位置
+
+                                } 
+                                from 和 to 的位置也可以使用 % 比； 
+            -- animation-iteration-count: 动画执行的次数；inifite 值得是无限次，可选无限循环执行；
+            -- animation-direction: 指动画执行的方向；默认值是normal: 正常方向 from 到to; reverse: 是指反向执行，从to 到 from 运行动画；alternate: 从from 到to 运行，重复执行动画时候，会反向执行； alternate-reverse: 是从to 到from运行，重复执行运动时候，反向执行；
+            -- animation-play-state: 设置动画执行的状态； 默认值： running; 表示动画执行中； 可选值还有：  pause: 暂停；可以控制动画运行状态；
+            -- animation-fill-mode: 默认值是 none; 表示动画执行完毕，元素回到开始位置；可选值： forward; 表示动画停在to 的终点位置； backward: 表示动画延迟等待时候，元素就会处于开始位置；both: 结合了forward 和 backward 两个特点；
+            -- 例子： 
+                     <style>
+                        * {
+                            margin: 0;
+                            padding: 0;
+                        }
+                        .box1 {
+                            width: 800px;
+                            height: 800px;
+                            background-color: silver;
+                            overflow: hidden;
+                        }
+                        .box1 div {
+                            width: 100px;
+                            height: 100px;
+                            margin-bottom: 100px;
+                            margin-left: 0;
+                        }
+                         .box2 {
+                            background-color: #bfa;
+                            /* 设置box2 的动画 ： 先指定好关键帧*/
+                            /* animation-name: 要对当前元素生效的关键帧的名字 ; */
+                            animation-name: test;
+                            /* animation-duration 指动画执行时间 */
+                            animation-duration: 2s;
+                            animation-delay: 0.1s;
+                            /* 动画执行的次数； */
+                            animation-iteration-count: infinite;
+                            animation-direction: alternate;
+                        }
+                        @keyframes test {
+                            from {
+                                margin-left: 0px
+                            }
+                            to {
+                                margin-left: 700px;
+                            }
+                        }
+                    </style>
+                </head>
+                <body>
+                    <div class="box1">
+                        <div class="box2"></div>
+                    </div>
+                </body>
+
+
+ 
     
 
 
