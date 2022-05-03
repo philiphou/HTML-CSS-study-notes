@@ -1085,6 +1085,78 @@
                         <div class="box2"></div>
                     </div>
                 </body>
+    - 动画补充：
+        -- 小球跳动
+                    <style>
+                    .outer {
+                        height: 500px;
+                        border-bottom: 10px black solid;
+                        margin: 50px auto;
+                        /* 解决和。box1的外边距重叠问题：加 overflow:hidden; */
+                        overflow: hidden;
+                    }
+                                        .box1 {
+                        width: 100px;
+                        height: 100px;
+                        border-radius: 50%;
+                        background-color: #bfa;
+                        /* 创建小球的落地弹起动画效果； */
+                        animation: ball 2s ease-in infinite alternate;
+                    }
+                    /* 创建小球下落的动画 */
+                                        @keyframes ball {
+                        from {
+                            margin-top: 0px;
+                        }
+                        /* 创建落地次数 */
+                        20%,
+                        60%,
+                        to {
+                            margin-top: 400px;
+                            animation-timing-function: ease-out;
+                        }
+                        /* 创建小球弹起最高点开始落地位置 */
+                        40% {
+                            margin-top: 100px;
+                        }
+                        80% {
+                            margin-top: 200px;
+                        }
+                    }
+                </style>
+            </head>
+    -- 变形： 
+        -- 一个div, 有 x, y,z 轴。变形就是指通过CSS来改变元素的形状和位置； 变形不会影响到页面的布局；
+        -- 我们在平移元素时候，百分比是相对于自身进行计算的。50% 就是自身维度的50%；
+        --  一个div 的页面居中方法1： 
+                            <style>
+                                .box3{
+                                    background-color:orange;
+                                    position:absolute;
+                                    top:0;
+                                    bottom:0
+                                    right:0;
+                                    left:0;
+                                    margin:auto;
+                                }
+                                </style>
+            这种方法指适用于元素大小确定时候，如果元素大小不确定，是被内容撑开的话，我们可以用td cell vertical-align 方式，也可以用此处的 translate 方法：
+                                <style>
+                                .box3{
+                                    background-color:orange;
+                                    position:absolute;
+                                   left:50%;
+                                   top:50%;
+                                   <!-- 向左向上移动50% 本身宽度和高度；可以写多个变形，用空格隔开 -->
+                                   transform:translateX(-50%) translateY(-50%);
+                                </style>
+        -- Z轴平移：
+        
+
+
+          
+
+
 
 
  

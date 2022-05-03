@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: silver;
+        }
+        
+        .box1 {
+            width: 200px;
+            height: 200px;
+            background-color: #bfa;
+            margin: 0px auto;
+            margin-top: 100px;
+            /* transform 用来设置元素的变形效果 */
+            /* 平移： translateX, translateY, translateZ 沿着x,y,z 平移 */
+            transform: translateX(100px);
+        }
+        
+        .box2 {
+            width: 200px;
+            height: 200px;
+            background-color: orange;
+            margin: 0 auto;
+        }
+        
+        .box3 {
+            width: 200px;
+            height: 400px;
+            background-color: white;
+            transition: all 0.2s;
+            margin: 20px auto;
+        }
+        
+        .box3:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 0 rgba(0, 0, 0, .3);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box1"></div>
+    <div class="box2"></div>
+    <div class="box3"></div>
+</body>
+
+</html>

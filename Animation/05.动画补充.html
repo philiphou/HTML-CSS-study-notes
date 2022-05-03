@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .outer {
+            height: 500px;
+            border-bottom: 10px black solid;
+            margin: 50px auto;
+            /* 解决和。box1的外边距重叠问题：加 overflow:hidden; */
+            overflow: hidden;
+        }
+        
+        .box1 {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background-color: #bfa;
+            /* 创建小球的落地弹起动画效果； */
+            animation: ball 2s ease-in infinite alternate;
+        }
+        /* 创建小球下落的动画 */
+        
+        @keyframes ball {
+            from {
+                margin-top: 0px;
+            }
+            /* 创建落地次数 */
+            20%,
+            60%,
+            to {
+                margin-top: 400px;
+                animation-timing-function: ease-out;
+            }
+            /* 创建小球弹起最高点开始落地位置 */
+            40% {
+                margin-top: 100px;
+            }
+            80% {
+                margin-top: 200px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="outer">
+
+        <div class="box1">
+        </div>
+
+    </div>
+</body>
+
+</html>
