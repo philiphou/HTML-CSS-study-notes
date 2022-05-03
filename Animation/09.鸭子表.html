@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .sec-wrapper {
+            width: 500px;
+            height: 500px;
+            background-color: #bfa;
+            border-radius: 50%;
+            animation: run 60s;
+            margin: 50px auto;
+        }
+        
+        .sec {
+            height: 250px;
+            width: 4px;
+            background-color: red;
+            margin: 0 auto;
+            /*  让秒针旋转 , 要沿着秒针的跟转，不是中点转, 给sec 设置父元素 sec-wrapper， 让父元素去旋转；*/
+            /* animation: run 60s; */
+        }
+        
+        @keyframes run {
+            from {
+                transform: rotateZ(0);
+            }
+            to {
+                transform: rotateZ(360deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="sec-wrapper">
+
+        <div class="sec">
+        </div>
+
+    </div>
+</body>
+
+</html>
