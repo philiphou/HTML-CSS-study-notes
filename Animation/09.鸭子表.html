@@ -12,22 +12,69 @@
             padding: 0;
         }
         
-        .sec-wrapper {
-            width: 500px;
-            height: 500px;
-            background-color: #bfa;
+        .clock {
+            width: 400px;
+            height: 400px;
+            margin: 0 auto;
+            margin-top: 200px;
             border-radius: 50%;
-            animation: run 60s;
-            margin: 50px auto;
+            position: relative;
+            background-image: url('./image/时钟表盘-11342896.jpg');
+            background-size: cover;
+        }
+        /* 设置时针容器样式 */
+        
+        .clock>div {
+            /* 设置居中 */
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            margin: auto;
+        }
+        
+        .hour-wrapper {
+            height: 60%;
+            width: 60%;
+            position: absolute;
+            animation: run 43200s steps(60);
+        }
+        /* 设置时针样式 */
+        
+        .hour {
+            height: 50%;
+            width: 6px;
+            background-color: #000;
+            margin: 0 auto;
+        }
+        /* 设置分针样式 */
+        
+        .min-wrapper {
+            height: 70%;
+            width: 70%;
+            position: absolute;
+            animation: min-run 3600s steps(60);
+        }
+        
+        .min {
+            height: 50%;
+            width: 3px;
+            margin: 0 auto;
+            background-color: blue;
+        }
+        
+        .sec-wrapper {
+            height: 80%;
+            width: 80%;
+            position: absolute;
+            animation: run 60s steps(60);
         }
         
         .sec {
-            height: 250px;
-            width: 4px;
+            width: 2px;
+            height: 50%;
             background-color: red;
             margin: 0 auto;
-            /*  让秒针旋转 , 要沿着秒针的跟转，不是中点转, 给sec 设置父元素 sec-wrapper， 让父元素去旋转；*/
-            /* animation: run 60s; */
         }
         
         @keyframes run {
@@ -38,14 +85,37 @@
                 transform: rotateZ(360deg);
             }
         }
+        
+        @keyframes min-run {
+            from {
+                transform: rotateZ(30deg);
+            }
+            to {
+                transform: rotateZ(360deg);
+            }
+        }
     </style>
 </head>
 
 <body>
-    <div class="sec-wrapper">
-
-        <div class="sec">
+    <!-- 创建一个表的容器 -->
+    <div class="clock">
+        <!-- 创建时针 -->
+        <div class="hour-wrapper">
+            <!-- 创建时针 -->
+            <div class="hour">
+            </div>
         </div>
+        <div class="min-wrapper">
+            <!-- 创建时针 -->
+            <div class="min">
+            </div>
+        </div>
+        <div class="sec-wrapper">
+
+            <div class="sec"></div>
+        </div>
+
 
     </div>
 </body>
