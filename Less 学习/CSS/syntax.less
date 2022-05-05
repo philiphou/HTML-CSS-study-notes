@@ -1,0 +1,37 @@
+// 结构嵌套
+// 双斜杠是less的注释开始，
+/* 这种css 模式的注释会被保存到编译后的css 文件中*/
+.box1{
+    background-color: #bfa;
+    .box2{
+        background-color: red;
+        
+    }
+    .box3{
+        background-color: green;
+        .box4{
+            color:black;
+        }
+    }
+}
+// 变量： 在变量中可以存储任意的值，并且我们可以需要时，任意的修改变量的值；
+// 变量的语法： @变量名 比如给变量a设置值 100px 就是： @a:100px; 这样变量a 就可以随时被引用，语法 @a;
+
+@a:100px;
+.box5{
+    width:@a;
+}
+
+@b:#bfa;
+@c:box6;
+.box5{
+    width: @a;
+    color:@b;
+}
+// 使用变量时候，如果是直接使用，则以 @变量名 的形式引用即可
+// 如果作为类名使用，或者一部分值使用时，必须以 @{变量名}的形式引用；
+// 变量发生重叠时候，优先使用更近的，
+.@{c}{
+    width: @a;
+    background-image: url(".@{c}/1.png"); // 引用 .box6 下面的 image;
+}

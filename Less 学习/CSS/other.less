@@ -1,0 +1,16 @@
+// less 中还可以引入外部的less 文件， 语法是 @import；相当于把其他less 文件中的代码全部复制过来，这样less就可以进行模块化处理；最后集合；
+
+@import  "syntax.less";
+
+
+
+//  在less 中，所有的数值都可以直接进行运算: +-*/
+
+.box1{
+    width: 100px+25px;
+    height: 100px*2;
+}
+
+// less 和 css 文件有一个映射关系，这样修改代码时候容易找到在哪改less
+// 步骤是： 在VS code 的 easy less 扩展里找到 css-less configuration; 复制大括号里面的代码； 点击VScode 左下角的设置按钮，进入扩展选项，找到easy-less 扩展，然后编辑configration,
+// 把刚才复制的内容添加到less。compile:{} 中，参数修改为： compress: false; sourcemap:true; out:true;

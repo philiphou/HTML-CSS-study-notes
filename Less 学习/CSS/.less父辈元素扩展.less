@@ -1,0 +1,46 @@
+.box1{
+    .box2{
+        color:red;
+    }
+    >.box3{
+        color:green;
+    }
+    // 为 box1设置 hover
+&:hover{
+    background-color: #bfa;
+}
+}
+  
+.p1{
+    width: 100px;
+    height: 100px;
+}
+
+.p2:extend(.p1){
+    color:red;
+}
+.p3:extend(.box1 .box2){
+    width: 100px;
+}
+.p4{
+    //直接调用.p3样式: mixin 混合
+    .p3();
+
+}
+// 使用类选择器时候，可以在选择器后边添加一个(), 此时实际上是创建了一个 Mixin, 这个样式可以作为一个参数给别的元素例如 .p6用； 但是转译后的css 里没有 .p5 样式；类似于构造函数思想；
+.p5(){
+    width: 200px;height: 200px;background-color: red;
+}
+.p6{
+    .p5()
+}
+// 混合函数中可以直接设置变量；
+.test(@w,@color){
+    width: @w;
+    color:@color;
+}
+
+// 调用带有变量的混合函数时，记得给变量传参：
+.div1{
+    .test(200px,red);// 此时传入参数200px,那么.div1 的宽度就是 200px 颜色是 red， 注意参数的顺序一定要对应；也可以使用默认值： .test(@w:200px,@color:green)
+}

@@ -1154,11 +1154,45 @@
         -- 缩放： 用来对元素放大缩小的函数 scale(); 可以设定方向 scaleX(1.5) scaleY(1.8)  就是指x 方向放大1.5倍，Y 轴方向放大1.8倍， 小于1则表示缩小；scale(2) 表示整体放大2倍；
         -- transform-origin: 表示变形的原点；默认值是 center; 如果改成0,0 则从元素的左上角原点开始变形；
 - Less
-        
+    - 基本语法： 
+                        // 结构嵌套
+                .box1{
+                    background-color: #bfa;
+                    .box2{
+                        background-color: red;
+                        
+                    }
+                    .box3{
+                        background-color: green;
+                        .box4{
+                            color:black;
+                        }
+                    }
+                }
 
+    - 父元素和扩展
+        -- 
+                                .box1{
+                                    .box2{
+                                        color:red;
+                                    }
+                                        >.box3{
+                                            color:green;
+                                        }
+                                      // 为 box1设置 hover
+                                    &:hover{
+                                        background-color: #bfa; // & 代表离它最近的包括的元素，此处& 代表外层最近的 .box1
+                                    }
+                                 }
+        -- 继承样式语法：  :extend() 对当前选择器扩展指定选择器的样式；（选择器分组）
+                        .p1{
+                                width: 100px;
+                                height: 100px;
+                            }
 
-          
-
+                            .p2:extend(.p1){
+                                color:red;
+                            }
 
 
 
