@@ -9,21 +9,22 @@
     <style>
         body {
             perspective: 1200px;
+            background-color: orangered;
         }
         
         .cube {
-            width: 200px;
-            height: 200px;
-            margin: 100px auto;
+            width: 400px;
+            height: 400px;
+            margin: 200px auto;
             /* 让cube显示3d变形效果 */
             transform-style: preserve-3d;
             /* transform: rotateX(45deg) rotateZ(45deg); */
-            animation: rotate 16s infinite linear;
+            animation: rotate 4s infinite linear;
         }
         
         .cube img {
-            width: 200px;
-            height: 200px;
+            width: 400px;
+            height: 400px;
             vertical-align: top;
         }
         /* 为元素设置透明效果 */
@@ -34,36 +35,36 @@
         }
         
         .box1 {
-            transform: rotateY(90deg) translateZ(100px);
+            transform: rotateY(90deg) translateZ(200px);
         }
         
         .box2 {
-            transform: rotateY(-90deg) translateZ(100px);
+            transform: rotateY(-90deg) translateZ(200px);
         }
         
         .box3 {
-            transform: rotateX(90deg) translateZ(100px);
+            transform: rotateX(90deg) translateZ(200px);
         }
         
         .box4 {
-            transform: rotateX(-90deg) translateZ(100px);
+            transform: rotateX(-90deg) translateZ(200px);
         }
         
         .box5 {
-            transform: translateZ(100px);
+            transform: translateZ(200px);
         }
         
         .box6 {
-            transform: rotateY(180deg) translateZ(100px);
+            transform: rotateY(180deg) translateZ(200px);
         }
         /* 创建动画 */
         
         @keyframes rotate {
             from {
-                transform: rotateY(0) rotateZ(0);
+                transform: rotateX(0) rotateZ(0);
             }
             to {
-                transform: rotateY(1turn) rotateZ(1turn);
+                transform: rotateX(1turn) rotateZ(1turn);
             }
         }
     </style>

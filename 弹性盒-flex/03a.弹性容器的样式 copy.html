@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        
+        ul {
+            width: 600px;
+            height: 800px;
+            border: 10px red solid;
+            display: flex;
+            flex-flow: row wrap;
+            /* justify-content: 属性值都是调整的主轴特点 */
+            /* 
+            align-items: 设定元素在辅轴上如何排列 ，可以设定： 
+                - 元素在辅轴上如何对齐
+                - 元素间的关系
+                - 可选值： 
+                    -- strech: 默认值，可以将元素的长度设置为相同的值,只是同一行的元素高度相同；
+                    -- flex-start: 就不会拉伸元素了，元素只是沿着辅轴起边对齐；
+                    -- flex-end: 沿着辅轴的终端对齐
+                    -- center:居中；
+                    -- baseline: 基线对齐；
+            */
+            align-items: flex-start;
+            /* align-content: 设置的是辅轴上空白空间的分布，可选值： 
+                    -- center； space-between; 等，跟justify-content: 用法一样；
+            
+            */
+        }
+        
+        li {
+            width: 200px;
+            background-color: #bfa;
+            text-align: center;
+            font-size: 50px;
+            flex-shrink: 0;
+            flex-wrap: nowrap;
+        }
+        
+        li:nth-child(1) {
+            /* 
+            弹性元素的属性:
+                -- align-self: 用来覆盖当前弹性元素上的align-items,可选值跟 align-items 的一样;
+                          
+            */
+            align-self: flex-end;
+        }
+        
+        li:nth-child(2) {
+            background-color: tomato;
+        }
+        
+        li:nth-child(3) {
+            background-color: yellowgreen;
+        }
+        
+        li:nth-child(4) {
+            background-color: green;
+        }
+        
+        li:last-child {
+            background-color: pink;
+        }
+    </style>
+</head>
+
+<body>
+
+    <ul>
+        <li>1</li>
+        <li>2
+            <div>
+                2
+            </div>
+        </li>
+        <li>3
+            <div>3</div>
+            <div>3</div>
+        </li>
+        <li>4</li>
+        <li>5</li>
+    </ul>
+</body>
+
+</html>

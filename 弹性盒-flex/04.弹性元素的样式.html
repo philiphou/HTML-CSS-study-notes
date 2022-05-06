@@ -1,0 +1,68 @@
+!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        
+        ul {
+            width: 800px;
+            border: 10px red solid;
+            /* 把ul设置成弹性盒 */
+            display: flex;
+        }
+        
+        li {
+            width: 200px;
+            height: 100px;
+            background-color: #bfa;
+            text-align: center;
+            line-height: 100px;
+            font-size: 50px;
+            /* 
+            弹性元素的样式：
+                - flex-grow:1; 元素增长系数，按比例分配剩余的空白空间,增长系数越大，分配到的剩余空白空间就越大，grow的空间就越大；；
+                - flex-shrink: 1; 默认值也是1， 是元素的缩减系数，缩减系数计算方式比较复杂，缩减多少根据缩减系数和元素大小来计算；
+                - flex-basis:100px；  元素的基础长度；指定元素的长度，相当于弹簧的自然状态长度；shrink 和 grow 是弹簧的压缩和伸张状态；该值指定的是元素在主轴上的基础长度
+                   如果主轴是横向的，则该值指定的是元素的宽度，如果主轴是纵向的，该值指定的是元素的高度； 默认值是 auto；表示参考元素自身的高度或者宽度；
+                   如果传递了一个具体的数，则以该值为主；
+                   这三个值有一个简写属性：flex: 可以设置弹性元素所有的三个样式： 
+                   flex: 1 1 auto; 顺序是： flex:增长，缩短，基础； flex 有一个默认值 叫initial， flex: initial; 相当于： flex: 0 1 atuo; 还有一个值叫 auto:  flex:auto; 相当于： flex: 1 1 auto;
+                    还有一个属性值叫 none: flex:none 相当于 flex: 0 0 auto; 表示元素不缩减，不生长，基础长度是元素自身高度或者宽度；
+                - order: 决定元素的排列顺序： 可选值有 1，2,3。。。 , 顺序值越大，排列的越靠后；
+            
+            
+            */
+            flex-grow: 1;
+        }
+        
+        li:nth-child(2) {
+            background-color: yellow;
+            order: 3;
+        }
+        
+        li:last-child {
+            background-color: pink;
+            order: 1;
+        }
+    </style>
+</head>
+
+<body>
+
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+    </ul>
+</body>
+
+</html>
