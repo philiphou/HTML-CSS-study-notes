@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .box1 {
+            width: 900px;
+            height: 100px;
+            background-color: orange;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 
+        - 在不同的屏幕下，单位像素的大小是不同的；像素越小，屏幕会越清晰；
+        - 移动端 比如手机 大部分情况下，智能手机的像素要远远小于计算机的像素点；
+        - 比如 iPhone6, 屏幕是 4.7 寸， 像素是 750 x 1334  参考网站： https://material.io/resources/devices
+        - 问题： 一个宽度为900px 的网页如何在 iPhone 6 中显示？  先把第2个meta 注释掉
+        - 注意： 默认情况下，移动端的网页视口都会设置为980px(css 像素，不是物理像素)， 以确保PC端网页可以在移动端正常访问；
+        - 如果网页宽度超过了980px, 移动端的浏览器会自动对网页缩放，以浏览完整页面；
+        - 所以基本上大部分PC端网站，都会在移动端正常浏览，但是往往体验不是太好；
+        - 为了解决这个问题，大部分网站都会为移动端专门设计网站；
+
+      -->
+    <div class="box1"></div>
+</body>
+
+
+
+
+</html>
