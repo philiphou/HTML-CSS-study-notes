@@ -1,0 +1,39 @@
+*{
+    margin:0;
+    padding:0;
+}
+@w:750;
+@center-width: (693/40)rem;
+.w{
+    width: (693/40)rem;
+    margin:0 auto;
+}
+// 设置根元素
+html{
+    // 设置rem 的比值，用于适配
+    font-size: 40*(100vw/@w);
+    background-color: #eff0f4;;
+}
+a{
+    text-decoration: none;
+}
+// 设置头部 header
+header:extend(.w){
+    // 设置弹性容器
+    display: flex;
+    // 设置高度
+    height: (175rem/40);
+    // 设置对齐方式：
+    justify-content: space-between;
+    // 设置垂直居中：(辅轴的对齐方式）
+    align-items:center ;
+a{
+    color: #243524;
+    font-size:30px;
+    i{
+        color:#999;
+        font-size: 16px;;
+    }
+}
+
+}

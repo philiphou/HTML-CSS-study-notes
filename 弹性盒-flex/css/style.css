@@ -1,0 +1,30 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+.w,
+header {
+  width: 17.325 rem;
+  margin: 0 auto;
+}
+html {
+  font-size: 5.33333333vw;
+  background-color: #eff0f4;
+}
+a {
+  text-decoration: none;
+}
+header {
+  display: flex;
+  height: 4.375rem;
+  justify-content: space-between;
+  align-items: center ;
+}
+header a {
+  color: #243524;
+  font-size: 30px;
+}
+header a i {
+  color: #999;
+  font-size: 16px;
+}
