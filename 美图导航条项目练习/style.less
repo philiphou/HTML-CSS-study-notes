@@ -1,0 +1,66 @@
+// 顶部导航条外部容器
+.top-bar{
+height: 48px;
+background-color: #000;
+padding:0 14px;
+display: flex;
+align-items: center;
+justify-content: space-between;
+}
+// 设置左侧导航的图标
+.left-menu{
+    // 导航图标
+    .menu-icon{
+        width: 18px;
+       
+        height: 48px;
+        position: relative;
+// 导航图标三道杠
+        li{
+            width: 18px;
+            height: 1px;
+            background-color:#fff;
+            position:absolute;
+            // 修改变形时的锚点
+            transform-origin:left center;
+            transition: 0.5s;
+        }
+        li:nth-child(1){
+            top:18px;
+         
+
+        }
+        li:nth-child(2){
+           top:24px;
+          
+
+        }
+        li:nth-child(3){
+            top:30px;
+          
+
+        }
+        // & 表示外层元素，此处是 menu-icon, 设置hover; 正常项目时，效果使用js 来实现；
+        &:hover{
+            li:nth-child(1){
+                top:18px;
+                // 向下旋转：
+                transform: rotateZ(43deg);
+    
+    
+            }
+            li:nth-child(2){
+               top:24px;
+               opacity: 0;
+    
+            }
+            li:nth-child(3){
+                top:30px;
+                  // 向上旋转：
+                  transform: rotateZ(-45deg);
+    
+            }
+
+        }
+    }
+}
