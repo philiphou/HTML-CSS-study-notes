@@ -1,5 +1,14 @@
+
+.top-bar-wrapper{
+    height: 48px;
+background-color: #000;
+
+}
+
 // 顶部导航条外部容器
 .top-bar{
+    max-width: 1200px;
+    margin: 0 auto;
 height: 48px;
 background-color: #000;
 padding:0 14px;
@@ -7,8 +16,58 @@ display: flex;
 align-items: center;
 justify-content: space-between;
 }
+a{
+    text-decoration: none;
+    color:#fff;
+    &:hover{
+        color:yellow;
+    }
+}
 // 设置左侧导航的图标
 .left-menu{
+    &:active{
+        .nav{
+            display: block;
+        }
+    }
+    // 设置菜单：
+    .nav{
+        display: none;
+        position:absolute;
+        top:48px;
+        right:0;
+        bottom:0;
+        left:0;
+        background-color: #000;
+        padding-top:60px;
+      
+     
+        li{
+             
+            width: 80%;
+            margin:0 auto;
+            border-bottom:1px solid #fff;
+            a{
+                line-height: 44px;
+                display: block;
+                font-style: 14px;
+            }
+            // 让最后一个li 里面的 a 变成行内块元素；
+            &:last-child a{
+                display: inline-block;
+                margin-right: 15px;
+            }
+            span{
+                color:#fff;
+                font-size:14px;
+                
+            
+            }
+           
+        }
+    
+    
+    }
     // 导航图标
     .menu-icon{
         width: 18px;
@@ -41,7 +100,7 @@ justify-content: space-between;
 
         }
         // & 表示外层元素，此处是 menu-icon, 设置hover; 正常项目时，效果使用js 来实现；
-        &:hover{
+        &:active{
             li:nth-child(1){
                 top:18px;
                 // 向下旋转：
@@ -62,5 +121,69 @@ justify-content: space-between;
             }
 
         }
+    }
+}
+// 设置 logo
+.logo{
+    a{
+        text-indent: -9999px;
+        display: block;
+        width: 115px;
+        height: 32px;
+        background-image: url(../弹性盒-flex/image/meitu.png);
+        background-size: contain;
+        
+    }
+}
+
+//  设置媒体查询： 
+@media only screen{
+    // 断点在768 像素
+    @media (min-width: 768px){
+        //  调整三个元素的排列顺序
+        .left-menu{
+            // 设置.left-menu 这个弹性元素可以自动生长
+            flex:auto;
+            order:2;
+             // 显示菜单：
+             .nav{
+                 padding: 0;
+                 justify-content: space-around;
+           li{
+               margin:0;
+            
+               width: auto;
+               border-bottom: none;
+               a{
+                   line-height: 48px;
+               }
+               span{
+                   display: none;
+               }
+           }
+                // 关掉定位：
+                position: static;
+                // 横过来
+                display: flex;
+
+            }
+             // 隐藏菜单图标：
+             .menu-icon{
+                display: none;
+            }
+        }
+        .logo{
+            order:1;
+           
+           
+
+
+        }
+        .user-info{
+            order:3;
+
+        }
+
+
     }
 }
